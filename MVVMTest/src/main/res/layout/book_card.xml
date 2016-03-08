@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:custom="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+                name="bookCardVM"
+                type="com.jgsmanaroulas.mvvmtest.mvvmtest.viewmodel.BookCardVM" />
+    </data>
+
+
+    <LinearLayout
+            android:clickable="true"
+            android:contextClickable="true"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/view"
+                android:layout_gravity="center_horizontal">
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <ImageView
+                        android:id="@+id/imvBookCover"
+                        android:layout_width="150dp"
+                        android:layout_height="300dp"
+                        android:src="@{bookCardVM.color}"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/imvBookCover"
+                        android:text="@{bookCardVM.bookName}"
+                        android:id="@+id/txvBookName"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txvBookName"
+                        android:text="@{bookCardVM.bookVersion}"
+                        android:id="@+id/txvBookLikes"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txvBookLikes"
+                        android:text="@{bookCardVM.percentage}"
+                        android:id="@+id/circle_progress"/>
+
+                <!--<com.github.lzyzsd.circleprogress.CircleProgress-->
+                        <!--android:id="@+id/circle_progress"-->
+                        <!--android:layout_marginLeft="50dp"-->
+                        <!--android:layout_width="100dp"-->
+                        <!--android:layout_height="100dp"-->
+                        <!--android:layout_above="@id/txvBookLikes"-->
+                        <!--custom:circle_progress="@{bookCardVM.percentage}"/>-->
+
+            </RelativeLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+
+    </LinearLayout>
+</layout>
